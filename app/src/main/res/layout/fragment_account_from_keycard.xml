@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                   xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+                                                   android:layout_height="match_parent">
+    <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:menu="@menu/restore_mnemonic_menu"
+            app:navigationIcon="@drawable/ic_back"
+            app:title="@string/Restore_Enter_Key_Title"
+            app:titleTextAppearance="@style/Title3" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="numberPassword"
+            android:ems="10"
+            android:id="@+id/editTextNumberPassword"
+            android:layout_marginEnd="25dp" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="25dp" android:hint="PIN"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar" android:layout_marginTop="100dp"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="numberPassword"
+            android:ems="10"
+            android:id="@+id/editTextNumberPassword2"
+            app:layout_constraintTop_toBottomOf="@+id/editTextNumberPassword"
+            android:layout_marginTop="50dp" android:layout_marginEnd="25dp" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="25dp" android:hint="PUK"/>
+    <CheckBox
+            android:text="@string/card_set_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/checkBox"
+            app:layout_constraintTop_toBottomOf="@+id/editTextNumberPassword2"
+            app:layout_constraintStart_toStartOf="@+id/editTextNumberPassword2"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:ems="10"
+            android:id="@+id/editTextTextPassword"
+            app:layout_constraintTop_toBottomOf="@+id/checkBox"
+            android:layout_marginTop="50dp" android:layout_marginEnd="25dp" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="25dp"
+            android:hint="Pairing password"/>
+    <Button
+            android:text="Next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/button"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword"
+            android:layout_marginTop="100dp" style="@style/ButtonPrimaryGreen"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
