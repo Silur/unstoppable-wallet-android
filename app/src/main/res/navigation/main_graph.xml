@@ -115,6 +115,8 @@
         <action
             android:id="@+id/manageAccountsFragment_to_manageAccount"
             app:destination="@id/manageAccountFragment" />
+        <action android:id="@+id/action_manageAccountsFragment_to_keycardPairFragment"
+                app:destination="@id/keycardPairFragment"/>
     </fragment>
 
     <fragment
@@ -438,5 +440,7 @@
         android:id="@+id/selectSwapCoinDialog"
         android:name="io.horizontalsystems.bankwallet.modules.swap.coinselect.SelectSwapCoinDialogFragment"
         tools:layout="@layout/fragment_swap_select_token" />
+    <fragment android:id="@+id/keycardPairFragment" android:name="io.horizontalsystems.bankwallet.modules.connectkeycard.KeycardPairFragment"
+              android:label="fragment_keycard_pair" tools:layout="@layout/fragment_keycard_pair"/>
 
 </navigation>

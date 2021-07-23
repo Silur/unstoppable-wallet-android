@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.ConcatAdapter
@@ -54,7 +55,8 @@ class ManageAccountsFragment : BaseFragment(), AccountViewHolder.Listener {
         val accountsAdapter = AccountsAdapter(this)
         val actionsAdapter = ActionsAdapter(listOf(
                 ActionViewItem(R.drawable.ic_plus, R.string.ManageAccounts_CreateNewWallet, ::onClickCreateWallet),
-                ActionViewItem(R.drawable.ic_download, R.string.ManageAccounts_ImportWallet, ::onClickRestoreWallet)
+                ActionViewItem(R.drawable.ic_download, R.string.ManageAccounts_ImportWallet, ::onClickRestoreWallet),
+                ActionViewItem(R.drawable.ic_nfc, R.string.CreateWallet_FromKeycard, ::onClickFromKeycard)
         ))
 
         val concatAdapter = ConcatAdapter(accountsAdapter, MarginAdapter(), actionsAdapter, ManageAccountsHintAdapter())
@@ -69,7 +71,7 @@ class ManageAccountsFragment : BaseFragment(), AccountViewHolder.Listener {
             findNavController().popBackStack()
         })
     }
-
+        
     private fun onClickCreateWallet() {
         findNavController().navigate(R.id.manageAccountsFragment_to_createAccountFragment, null, navOptions())
     }
@@ -77,7 +79,10 @@ class ManageAccountsFragment : BaseFragment(), AccountViewHolder.Listener {
     private fun onClickRestoreWallet() {
         findNavController().navigate(R.id.manageAccountsFragment_to_restoreMnemonicFragment, null, navOptions())
     }
-
+    private fun onClickFromKeycard() {
+        Toast.makeText(this.context, "Unimplemented", Toast.LENGTH_SHORT).show()
+    }
+    
     override fun onSelect(accountViewItem: AccountViewItem) {
         viewModel.onSelect(accountViewItem)
     }
