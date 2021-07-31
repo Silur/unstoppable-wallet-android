@@ -17,7 +17,7 @@
             android:layout_height="wrap_content"
             android:inputType="numberPassword"
             android:ems="10"
-            android:id="@+id/editTextNumberPassword"
+            android:id="@+id/editTextPin"
             android:layout_marginEnd="25dp" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="25dp" android:hint="PIN"
             app:layout_constraintTop_toBottomOf="@+id/toolbar" android:layout_marginTop="100dp"/>
@@ -26,22 +26,22 @@
             android:layout_height="wrap_content"
             android:inputType="numberPassword"
             android:ems="10"
-            android:id="@+id/editTextNumberPassword2"
-            app:layout_constraintTop_toBottomOf="@+id/editTextNumberPassword"
+            android:id="@+id/editTextPUK"
+            app:layout_constraintTop_toBottomOf="@+id/editTextPin"
             android:layout_marginTop="50dp" android:layout_marginEnd="25dp" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="25dp" android:hint="PUK"/>
     <CheckBox
             android:text="@string/card_set_up"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:id="@+id/checkBox"
-            app:layout_constraintTop_toBottomOf="@+id/editTextNumberPassword2"
-            app:layout_constraintStart_toStartOf="@+id/editTextNumberPassword2"/>
+            app:layout_constraintTop_toBottomOf="@+id/editTextPUK"
+            app:layout_constraintStart_toStartOf="@+id/editTextPUK"/>
     <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
             android:ems="10"
-            android:id="@+id/editTextTextPassword"
+            android:id="@+id/editTextPairingPass"
             app:layout_constraintTop_toBottomOf="@+id/checkBox"
             android:layout_marginTop="50dp" android:layout_marginEnd="25dp" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="25dp"
@@ -49,8 +49,8 @@
     <Button
             android:text="Next"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/button"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword"
+            android:layout_height="wrap_content" android:id="@+id/buttonNext"
+            app:layout_constraintTop_toBottomOf="@+id/editTextPairingPass"
             android:layout_marginTop="100dp" style="@style/ButtonPrimaryGreen"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

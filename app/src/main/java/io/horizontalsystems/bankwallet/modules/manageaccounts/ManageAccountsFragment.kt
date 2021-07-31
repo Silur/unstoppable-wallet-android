@@ -80,7 +80,7 @@ class ManageAccountsFragment : BaseFragment(), AccountViewHolder.Listener {
         findNavController().navigate(R.id.manageAccountsFragment_to_restoreMnemonicFragment, null, navOptions())
     }
     private fun onClickFromKeycard() {
-        Toast.makeText(this.context, "Unimplemented", Toast.LENGTH_SHORT).show()
+        findNavController().navigate(R.id.keycardPairFragment, null, navOptions())
     }
     
     override fun onSelect(accountViewItem: AccountViewItem) {
